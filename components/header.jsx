@@ -1,22 +1,29 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import netlifyLogo from 'public/netlify-logo.svg';
+import medi from 'public/images/medi.png';
 import githubLogo from 'public/images/github-mark-white.svg';
 
 const navItems = [
     { linkText: 'Home', href: '/' },
-    { linkText: 'Revalidation', href: '/revalidation' },
-    { linkText: 'Image CDN', href: '/image-cdn' },
-    { linkText: 'Edge Function', href: '/edge' },
-    { linkText: 'Blobs', href: '/blobs' },
-    { linkText: 'Classics', href: '/classics' }
+    { linkText: 'About us', href: '/' },
+    { linkText: 'Our Services', href: '/' },
+    { linkText: 'Portfolio', href: '/' },
+    { linkText: 'Clients', href: '/' },
+    { linkText: 'Contact', href: 'https://forms.gle/eqkBK9p4fLfkcrsw8'}
+    // { linkText: 'Home', href: '/' },
+    // { linkText: 'About us', href: '/revalidation' },
+    // { linkText: 'Our Services', href: '/image-cdn' },
+    // { linkText: 'Portfolio', href: '/edge' },
+    // { linkText: 'Clients', href: '/blobs' },
+    // { linkText: 'Contact', href: '/classics' }
 ];
 
 export function Header() {
     return (
-        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-12 sm:pt-12 md:pb-24">
+        <nav className="flex flex-wrap items-center gap-4 pt-6 pb-6 sm:pt-6 md:pb-6">
             <Link href="/">
-                <Image src={netlifyLogo} alt="Netlify logo" />
+                <Image src={medi} alt="Medichelme Consulting" style={{ width: '100%', height: 'auto' }} />
             </Link>
             {!!navItems?.length && (
                 <ul className="flex flex-wrap gap-x-4 gap-y-1">
@@ -32,7 +39,7 @@ export function Header() {
                     ))}
                 </ul>
             )}
-            <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
+            {/* <div className="flex-grow justify-end hidden lg:flex lg:mr-1">
                 <Link
                     href="https://github.com/netlify-templates/next-platform-starter"
                     target="_blank"
@@ -40,7 +47,7 @@ export function Header() {
                 >
                     <Image src={githubLogo} alt="GitHub logo" className="w-7" />
                 </Link>
-            </div>
+            </div> */}
         </nav>
     );
 }
